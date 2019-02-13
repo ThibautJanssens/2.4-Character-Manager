@@ -1,4 +1,3 @@
-
 /*
   Import the common theme.
 */
@@ -7,4 +6,43 @@
 /*
   If you need some CSS for any reason you can put it here.
 */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "Article Article Article Article";
+}
 
+.Article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.2fr;
+  grid-template-areas: "Picture Name Name""Picture Intro Intro""ButtonHolder ButtonHolder ButtonHolder";
+  grid-area: Article;
+  padding: 20px 0;
+}
+
+.Picture {
+  grid-area: Picture;
+}
+
+.ButtonHolder {
+  grid-area: ButtonHolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Name {
+  grid-area: Name;
+}
+
+.Intro {
+  grid-area: Intro;
+}
+
+img {
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+}
